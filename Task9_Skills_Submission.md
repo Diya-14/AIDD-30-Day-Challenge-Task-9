@@ -359,3 +359,4 @@ async function checkPlotConsistency(plotSummary) {
 // This function will be called by Claude to execute the skill
 exports.main = checkPlotConsistency;
 ```
+
