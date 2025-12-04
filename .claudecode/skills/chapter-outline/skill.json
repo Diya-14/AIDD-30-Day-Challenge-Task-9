@@ -1,0 +1,37 @@
+{
+  "name": "Chapter Outline Generator",
+  "description": "Generates a detailed chapter outline for a book based on a given topic or premise and the desired number of chapters.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "topic": {
+        "type": "string",
+        "description": "The main topic or premise of the book for which to generate an outline."
+      },
+      "numChapters": {
+        "type": "number",
+        "description": "The desired number of chapters in the outline. Defaults to 10 if not specified.",
+        "default": 10
+      }
+    },
+    "required": ["topic"]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "outline": {
+        "type": "array",
+        "description": "An array of chapter objects, each containing the chapter number, title, and a brief summary.",
+        "items": {
+          "type": "object",
+          "properties": {
+            "chapterNumber": {"type": "number"},
+            "title": {"type": "string"},
+            "summary": {"type": "string"}
+          },
+          "required": ["chapterNumber", "title", "summary"]
+        }
+      }
+    }
+  }
+}

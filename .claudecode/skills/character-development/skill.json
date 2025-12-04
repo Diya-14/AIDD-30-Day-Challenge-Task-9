@@ -1,0 +1,44 @@
+{
+  "name": "Character Development Assistant",
+  "description": "Generates a detailed character profile, including name, role, personality, backstory, and motivations, based on initial traits and story genre.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "The name of the character."
+      },
+      "role": {
+        "type": "string",
+        "description": "The character's role in the story (e.g., protagonist, antagonist, sidekick, mentor, villain)."
+      },
+      "traits": {
+        "type": "array",
+        "items": {"type": "string"},
+        "description": "Key personality traits and characteristics of the character (e.g., 'brave', 'cynical', 'ambitious', 'loyal', 'secretive')."
+      },
+      "genre": {
+        "type": "string",
+        "description": "The genre of the story, to help tailor the character's profile (e.g., 'fantasy', 'sci-fi', 'mystery', 'romance', 'thriller').",
+        "default": "general fiction"
+      }
+    },
+    "required": ["name", "role", "traits"]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "characterProfile": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string"},
+          "role": {"type": "string"},
+          "personality": {"type": "string", "description": "A detailed description of the character's personality."},
+          "backstory": {"type": "string", "description": "A brief history and background of the character."},
+          "motivations": {"type": "string", "description": "What drives the character's actions and goals."}
+        },
+        "required": ["name", "role", "personality", "backstory", "motivations"]
+      }
+    }
+  }
+}

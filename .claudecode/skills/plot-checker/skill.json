@@ -1,0 +1,32 @@
+{
+  "name": "Plot Consistency Checker",
+  "description": "Analyzes a book's plot summary, specifically checking for logical consistency across major story elements like the introduction, central conflict, climax, and ending.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "plotSummary": {
+        "type": "string",
+        "description": "A comprehensive summary of the book's plot, ideally covering introduction, conflict, climax, and ending."
+      }
+    },
+    "required": ["plotSummary"]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "analysis": {
+        "type": "string",
+        "description": "A detailed analysis of the plot summary's consistency."
+      },
+      "suggestions": {
+        "type": "array",
+        "items": {"type": "string"},
+        "description": "Suggestions for improving plot consistency or addressing identified issues."
+      },
+      "issuesFound": {
+        "type": "boolean",
+        "description": "True if any significant consistency issues were found, false otherwise."
+      }
+    }
+  }
+}
